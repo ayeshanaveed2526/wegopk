@@ -1,0 +1,178 @@
+{
+  "branding": {
+    "colorScheme": "light",
+    "fonts": [
+      {
+        "family": "Inter",
+        "role": "body"
+      },
+      {
+        "family": "Geeza Pro",
+        "role": "unknown"
+      }
+    ],
+    "colors": {
+      "primary": "#0000EE",
+      "secondary": "#E7FDDC",
+      "accent": "#44B50C",
+      "background": "#FFFFFF",
+      "textPrimary": "#1D1D1D",
+      "link": "#44B50C"
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": "Inter",
+        "heading": "Inter"
+      },
+      "fontStacks": {
+        "heading": [
+          "Inter",
+          "Geeza Pro",
+          "sans-serif"
+        ],
+        "body": [
+          "Inter",
+          "Geeza Pro",
+          "sans-serif"
+        ],
+        "paragraph": [
+          "Inter",
+          "Geeza Pro",
+          "sans-serif"
+        ]
+      },
+      "fontSizes": {
+        "h1": "16px",
+        "h2": "30px",
+        "body": "16px"
+      }
+    },
+    "spacing": {
+      "baseUnit": 4,
+      "borderRadius": "8px"
+    },
+    "components": {
+      "input": {
+        "background": "transparent",
+        "textColor": "#1D1D1D",
+        "borderColor": null,
+        "borderRadius": "0px",
+        "borderRadiusCorners": {
+          "topLeft": "0px",
+          "topRight": "0px",
+          "bottomRight": "0px",
+          "bottomLeft": "0px"
+        },
+        "shadow": "none"
+      },
+      "buttonPrimary": {
+        "background": "#44B50C",
+        "textColor": "#FFFFFF",
+        "borderRadius": "100px",
+        "borderRadiusCorners": {
+          "topLeft": "100px",
+          "topRight": "100px",
+          "bottomRight": "100px",
+          "bottomLeft": "100px"
+        },
+        "shadow": "none"
+      },
+      "buttonSecondary": {
+        "background": "transparent",
+        "textColor": "#FFFFFF",
+        "borderColor": "#FFFFFF",
+        "borderRadius": "100px",
+        "borderRadiusCorners": {
+          "topLeft": "100px",
+          "topRight": "100px",
+          "bottomRight": "100px",
+          "bottomLeft": "100px"
+        },
+        "shadow": "none"
+      }
+    },
+    "images": {
+      "favicon": "https://www.wego.pk/roxana/images/icon-192.png",
+      "ogImage": null
+    },
+    "__llm_logo_reasoning": {
+      "selectedIndex": -1,
+      "reasoning": "No suitable brand logo was found among the candidates. All candidates are tiny and do not match the expected brand representation for Wego.pk.",
+      "confidence": 0.2,
+      "rejected": true,
+      "source": "llm"
+    },
+    "__llm_button_reasoning": {
+      "primary": {
+        "index": 0,
+        "text": "Search",
+        "reasoning": "Button #0 with text 'Search' has a vibrant green background (#44B50C), which is the accent color and stands out as the primary call-to-action for users to initiate a search."
+      },
+      "secondary": {
+        "index": 4,
+        "text": "Login",
+        "reasoning": "Button #4 with text 'Login' has a transparent background, making it a suitable secondary action that does not compete visually with the primary button."
+      },
+      "confidence": 0.95
+    },
+    "personality": {
+      "tone": "modern",
+      "energy": "medium",
+      "targetAudience": "travelers looking for flight and hotel deals"
+    },
+    "designSystem": {
+      "framework": "custom",
+      "componentLibrary": ""
+    },
+    "confidence": {
+      "buttons": 0.95,
+      "colors": 0.9,
+      "overall": 0.925
+    },
+    "__llm_metadata": {
+      "logoSelection": {
+        "llmCalled": true,
+        "llmSucceeded": true,
+        "finalSource": "llm",
+        "rawLogoSelection": {
+          "selectedLogoIndex": -1,
+          "selectedLogoReasoning": "No suitable brand logo was found among the candidates. All candidates are tiny and do not match the expected brand representation for Wego.pk.",
+          "confidence": 0.2
+        }
+      },
+      "buttonClassification": {
+        "llmCalled": true,
+        "llmSucceeded": true
+      }
+    }
+  },
+  "metadata": {
+    "language": "en",
+    "viewport": "width=device-width,minimum-scale=1,initial-scale=1,user-scalable=0",
+    "title": "Wego.pk - The #1 Travel Booking Website For Flights & Hotel Deals",
+    "description": "Book your flights & hotels on Wego.pk ✈ Compare over 1000 booking sites ✓ Find the lowest price ✓ Fast & easy booking ✓ Find out more now.",
+    "theme-color": "#ffffff",
+    "author": "wego",
+    "favicon": "https://www.wego.pk/roxana/images/icon-192.png",
+    "scrapeId": "019eb7c5-672a-74f9-903f-ea6f837529ec",
+    "sourceURL": "https://www.wego.pk/",
+    "url": "https://www.wego.pk/",
+    "statusCode": 200,
+    "contentType": "text/html",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "indexId": "adab5d1d-1754-40e6-9618-e86fedcc9f98",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  },
+  "images": [
+    "https://assets.wego.com/image/upload/c_fill,fl_lossy,q_auto:best,f_auto,w_1920/v1597920831/web/hero_images/pk_1.png",
+    "https://zen.wego.com/cdn-cgi/image/format=auto/cms/images/flight_363374043.png",
+    "https://zen.wego.com/cdn-cgi/image/width=600/web/illustrations/download-app-phone_en.png",
+    "https://zen.wego.com/cdn-cgi/image/format=auto,quality=90/cms/images/app-store-icon_354729773.png",
+    "https://zen.wego.com/cdn-cgi/image/format=auto,quality=90/cms/images/google-playstore-icon_354729800.png",
+    "https://zen.wego.com/cdn-cgi/image/format=auto/cms/images/support_363374119.png",
+    "https://zen.wego.com/cdn-cgi/image/format=auto/cms/images/pay_363374094.png",
+    "https://assets.wego.com/image/upload/h_120,w_120,f_auto,fl_lossy,q_auto:low/v202010050/web/install_banner/qr_code.png"
+  ]
+}
