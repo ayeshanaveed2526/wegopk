@@ -3,24 +3,6 @@
 import React from "react";
 import Image from "next/image";
 
-const features = [
-  {
-    image: "/images/icon-flight.png",
-    alt: "Best Deals",
-    title: "The best hotel & flight deals in the universe",
-  },
-  {
-    image: "/images/icon-pay.png",
-    alt: "Flexible Payment",
-    title: "Flexible ways to pay",
-  },
-  {
-    image: "/images/mascot-support.png",
-    alt: "24/7 Support",
-    title: "Support that never sleeps, we're with you 24/7",
-  },
-];
-
 function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex items-center gap-0.5">
@@ -57,7 +39,7 @@ export default function TrustSection() {
         </h2>
 
         {/* ── RATING ROW ── */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-14">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-6">
 
           {/* App Store rating */}
           <div className="flex items-center gap-3">
@@ -97,32 +79,6 @@ export default function TrustSection() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* ── THREE FEATURE CARDS ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feat, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center text-center group"
-            >
-              {/* Feature image */}
-              <div className="w-48 h-48 flex items-end justify-center mb-4">
-                <Image
-                  src={feat.image}
-                  alt={feat.alt}
-                  width={192}
-                  height={192}
-                  className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Title */}
-              <p className="text-[#1D1D1D] font-bold text-base leading-snug max-w-[220px]">
-                {feat.title}
-              </p>
-            </div>
-          ))}
         </div>
 
       </div>

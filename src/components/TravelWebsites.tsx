@@ -2,82 +2,120 @@
 
 import React from "react";
 
-// Styled text representations of real travel booking platforms
-const travelSites = [
-  { name: "Booking", dot: ".com", color: "#003580", weight: 900, size: 17 },
-  { name: "Expedia", color: "#00355F", weight: 700, size: 16 },
-  { name: "trip", suffix: ".com", color: "#00AF87", weight: 900, size: 16, suffixColor: "#FF6B35" },
-  { name: "Kayak", color: "#FF690F", weight: 900, size: 17 },
-  { name: "skyscanner", color: "#0770E3", weight: 700, size: 14 },
-  { name: "agoda", color: "#E1173F", weight: 900, size: 15 },
-  { name: "hotels", dot: ".com", color: "#D32F2F", weight: 700, size: 15 },
-  { name: "Airbnb", color: "#FF385C", weight: 700, size: 16 },
-  { name: "Priceline", color: "#003087", weight: 700, size: 14 },
-  { name: "Orbitz", color: "#E91E8C", weight: 800, size: 16 },
-  { name: "trivago", color: "#E8590C", weight: 700, size: 15 },
-  { name: "Wotif", color: "#FF6600", weight: 900, size: 16 },
+const partners = [
+  {
+    name: "FlyJinnah",
+    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/9P.png",
+  },
+  {
+    name: "AirSial",
+    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/PF.png",
+  },
+  {
+    name: "Pakistan International Airlines",
+    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/PK.png",
+  },
+  {
+    name: "airblue",
+    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/PA.png",
+  },
+  {
+    name: "sastaticket.pk",
+    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/providers/sastaticket_pk.png",
+    fallback: <span style={{ color: "#2E57A6", fontWeight: 700, fontSize: "14px" }}>sastaticket<span style={{ fontSize: "11px", color: "#666" }}>.pk</span></span>
+  },
+  {
+    name: "Sky-tours",
+    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/providers/sky_tours.png",
+    fallback: <span style={{ color: "#0090CC", fontWeight: 900, fontSize: "18px", fontStyle: "italic" }}>Sky<span style={{ color: "#E1173F" }}>-tours</span></span>
+  },
+  {
+    name: "OneTravel",
+    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/providers/onetravel.png",
+    fallback: <span style={{ color: "#FF690F", fontWeight: 800, fontSize: "16px" }}>OneTravel</span>
+  },
 ];
 
-const doubled = [...travelSites, ...travelSites];
-
-function SiteLogo({ site }: { site: typeof travelSites[0] }) {
-  return (
-    <div className="flex items-center flex-shrink-0 select-none" style={{ padding: "0 28px" }}>
-      <span
-        style={{
-          color: site.color,
-          fontWeight: site.weight,
-          fontSize: `${site.size}px`,
-          letterSpacing: "-0.01em",
-          whiteSpace: "nowrap",
-          fontFamily: "Inter, sans-serif",
-          opacity: 0.82,
-        }}
-      >
-        {site.name}
-        {site.dot && <span style={{ color: site.color }}>{site.dot}</span>}
-        {site.suffix && <span style={{ color: (site as any).suffixColor || site.color }}>{site.suffix}</span>}
-      </span>
-    </div>
-  );
-}
+const features = [
+  {
+    image: "/images/icon-flight.png",
+    alt: "Best Deals",
+    title: "The best hotel & flight deals in the universe",
+  },
+  {
+    image: "/images/icon-pay.png",
+    alt: "Flexible Payment",
+    title: "Flexible ways to pay",
+  },
+  {
+    image: "/images/mascot-support.png",
+    alt: "24/7 Support",
+    title: "Support that never sleeps, we're with you 24/7",
+  },
+];
 
 export default function TravelWebsites() {
   return (
-    <section style={{ backgroundColor: "#FAFAFA", borderTop: "1px solid #F4F4F4", borderBottom: "1px solid #F4F4F4", overflow: "hidden", padding: "28px 0" }}>
+    <section style={{ backgroundColor: "#ffffff", padding: "0 0 64px", textAlign: "center" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
 
-      {/* Heading */}
-      <div className="text-center" style={{ marginBottom: "22px" }}>
-        <p style={{ fontSize: "18px", fontWeight: 800, color: "#1D1D1D", letterSpacing: "-0.01em" }}>
-          Compare <span style={{ color: "#44B50C" }}>700+</span> travel websites. One simple search.
-        </p>
-        <p style={{ fontSize: "13px", color: "#767676", fontWeight: 400, marginTop: "4px" }}>
-          We search all major airlines and booking sites so you don&apos;t have to.
-        </p>
-      </div>
+        {/* ── HEADING ── */}
+        <h2 style={{ fontSize: "24px", fontWeight: 700, color: "#1D1D1D", marginBottom: "32px", letterSpacing: "-0.01em" }}>
+          700+ travel websites. One simple search.
+        </h2>
 
-      {/* Logos marquee */}
-      <div
-        className="animate-marquee-container"
-        style={{ position: "relative", overflow: "hidden" }}
-        aria-label="Partner travel booking sites"
-      >
-        {/* Left fade */}
-        <div
-          className="pointer-events-none absolute left-0 top-0 h-full z-10"
-          style={{ width: "80px", background: "linear-gradient(90deg, #FAFAFA 0%, transparent 100%)" }}
-        />
-        {/* Right fade */}
-        <div
-          className="pointer-events-none absolute right-0 top-0 h-full z-10"
-          style={{ width: "80px", background: "linear-gradient(270deg, #FAFAFA 0%, transparent 100%)" }}
-        />
+        {/* ── LOGOS ROW ── */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "36px", flexWrap: "wrap", opacity: 0.9, marginBottom: "80px" }}>
+          {partners.map((partner) => (
+            <div key={partner.name} style={{ display: "flex", alignItems: "center", justifyContent: "center", minWidth: "60px", height: "30px" }}>
+              <img
+                src={partner.url}
+                alt={partner.name}
+                style={{ width: "auto", height: "100%", objectFit: "contain", filter: "grayscale(0%)" }}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  if (e.currentTarget.nextElementSibling) {
+                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
+                  }
+                }}
+              />
+              {/* Fallback element if image fails to load */}
+              <div style={{ display: "none" }}>
+                {partner.fallback || (
+                  <span style={{ fontWeight: 700, fontSize: "14px", color: "#1D1D1D" }}>
+                    {partner.name}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
 
-        <div className="animate-marquee flex items-center" style={{ width: "max-content" }}>
-          {doubled.map((site, i) => (
-            <SiteLogo key={`${site.name}-${i}`} site={site} />
+          {/* "...and more!" text */}
+          <div style={{ fontSize: "14px", color: "#1D1D1D", fontWeight: 500 }}>
+            ...and more!
+          </div>
+        </div>
+
+        {/* ── MASCOTS ROW ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
+          {features.map((feat, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <div style={{ width: "192px", height: "192px", display: "flex", alignItems: "flex-end", justifySelf: "center", marginBottom: "16px" }} className="mx-auto">
+                <img
+                  src={feat.image}
+                  alt={feat.alt}
+                  style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain", transition: "transform 0.3s" }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+                />
+              </div>
+              <p style={{ color: "#1D1D1D", fontWeight: 700, fontSize: "16px", lineHeight: 1.3, maxWidth: "220px", margin: "0 auto" }}>
+                {feat.title}
+              </p>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

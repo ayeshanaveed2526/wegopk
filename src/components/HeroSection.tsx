@@ -41,20 +41,6 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ── WEGO MASCOT (desktop only) ── */}
-      <div
-        className="absolute hidden lg:flex items-end pointer-events-none select-none"
-        style={{ zIndex: 20, bottom: "88px", right: "calc(50% - 540px)" }}
-      >
-        <Image
-          src="/images/mascot-support.png"
-          alt="Wego mascot"
-          width={110}
-          height={110}
-          className="object-contain animate-mascot drop-shadow-lg"
-        />
-      </div>
-
       {/* ── MAIN CONTENT ── */}
       <div
         className="relative w-full max-w-[900px] mx-auto px-4 sm:px-6"

@@ -21,20 +21,20 @@ export default function Home() {
         {/* Hero & Search Forms */}
         <HeroSection />
 
-        {/* Travel Websites Marquee */}
-        <TravelWebsites />
-
         {/* Trust Signal: ratings + 3 feature cards */}
         <TrustSection />
+
+        {/* Travel Websites Marquee */}
+        <TravelWebsites />
 
         {/* Popular Destinations: scrolling marquee of flight routes */}
         <PopularDestinations />
 
-        {/* Explore Flights & Hotels Grid */}
-        <ExploreSection />
-
         {/* App Download: phone mockup + QR + store badges */}
         <AppDownloadSection />
+
+        {/* Explore Flights & Hotels Grid */}
+        <ExploreSection />
 
         {/* FAQ Accordion */}
         <FaqSection />
