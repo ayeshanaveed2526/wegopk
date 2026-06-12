@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import SearchTabs from "./SearchTabs";
 
 export default function HeroSection() {
@@ -9,23 +10,42 @@ export default function HeroSection() {
       className="relative flex items-start justify-center overflow-hidden"
       style={{ minHeight: "calc(100vh - 64px)", marginTop: "64px" }}
     >
-      {/* ── REAL HERO BACKGROUND PHOTO ── */}
-      <img
-        src="https://assets.wego.com/image/upload/c_fill,fl_lossy,q_auto:best,f_auto,w_1920/v1597920831/web/hero_images/pk_1.png"
+      {/* ── HERO BACKGROUND PHOTO (local) ── */}
+      <Image
+        src="/images/hero-bg.png"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        fill
+        priority
+        className="object-cover object-center"
         style={{ zIndex: 0 }}
+        sizes="100vw"
+        quality={90}
       />
 
-      {/* Subtle dark overlay at top */}
+      {/* Subtle dark overlay at top for navbar readability */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           zIndex: 1,
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, transparent 20%)",
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, transparent 25%)",
         }}
       />
+
+      {/* ── WEGO MASCOT (floating, right side) ── */}
+      <div
+        className="absolute bottom-24 right-[10%] hidden lg:block animate-mascot pointer-events-none select-none"
+        style={{ zIndex: 20 }}
+      >
+        <Image
+          src="/images/mascot-support.png"
+          alt="Wego mascot"
+          width={120}
+          height={120}
+          className="object-contain drop-shadow-lg"
+        />
+      </div>
 
       {/* ── MAIN CONTENT: TABS + SEARCH CARD ── */}
       <div

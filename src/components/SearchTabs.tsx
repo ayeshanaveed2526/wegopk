@@ -45,7 +45,7 @@ export default function SearchTabs() {
       <div className="flex justify-center">
         <div
           className="flex items-center p-1 rounded-full space-x-0.5"
-          style={{ backgroundColor: "rgba(255,255,255,0.25)", backdropFilter: "blur(8px)" }}
+          style={{ backgroundColor: "rgba(0,0,0,0.25)", backdropFilter: "blur(8px)" }}
         >
           {TABS.map((tab) => {
             const active = activeTab === tab.id;

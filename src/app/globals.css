@@ -1,13 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-wego-green: #44B50C;
-  --color-wego-light-green: #E7FDDC;
-  --color-wego-dark: #1D1D1D;
-  --color-wego-light-grey: #F4F6F8;
-  --color-wego-border: #E2E8F0;
-  
-  --font-sans: "Inter", "Geeza Pro", sans-serif;
+  /* ── Wego Brand Colors (source: /roxana/main.328171dc.css — Wego Web System v0.0.14) ── */
+  --color-wego-blue: #0090CC;          /* Navbar background */
+  --color-wego-green: #44B50C;         /* Primary CTA / active states */
+  --color-wego-green-dark: #188920;    /* CTA hover / pressed */
+  --color-wego-green-light: #E7FDDC;   /* Active bg / selected bg */
+  --color-wego-dark: #1D1D1D;          /* Primary text + footer bg */
+  --color-wego-grey-2: #767676;        /* Secondary / muted text */
+  --color-wego-grey-3: #BDBDBD;        /* Disabled state */
+  --color-wego-grey-4: #F4F4F4;        /* Tertiary bg */
+  --color-wego-border: #DFDFDF;        /* Default borders / inactive lines */
+  --color-wego-orange: #FF7A00;        /* "New" badge */
+  --color-wego-star: #F59E0B;          /* Star rating fill */
+  --color-wegopro-purple: #532CCE;     /* WegoPro brand */
+  --color-wegopro-light: #735CF7;      /* WegoPro accent */
+  --color-wego-bg-secondary: #FAFAFA; /* Subtle grey background */
+  --color-wego-bg-highlight: #FDF5CB; /* Highlight / promo bg */
+  --color-wego-link: #016CD5;          /* Link blue */
+  --color-wego-warning: #D85D0D;       /* Warning text */
+
+  /* ── Typography ── */
+  --font-sans: "Inter", "Noto Sans", "Geeza Pro", sans-serif;
 }
 
 :root {

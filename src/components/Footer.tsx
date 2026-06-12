@@ -85,23 +85,23 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-[#1D1D1D]">
       {/* Main links grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-xs font-black uppercase tracking-widest text-gray-900 mb-4">
+              <h3 className="text-sm font-bold text-white mb-4">
                 {category}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-500 hover:text-[#44B50C] transition-colors"
+                      className="text-[13px] text-[#767676] hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -114,14 +114,14 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-200">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright */}
           <div className="text-center md:text-left">
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-[#767676]">
               Copyright ©{new Date().getFullYear()} Wego Pte Ltd. All Rights Reserved
             </p>
-            <p className="text-xs text-gray-400 mt-0.5">
+            <p className="text-xs text-[#565656] mt-0.5">
               Wego Travel & Tourism (Private) Limited - Department of Tourist Services License 10334
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#44B50C] hover:border-[#44B50C]/30 transition-all"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-[#767676] hover:text-white hover:bg-white/20 transition-all"
               >
                 {s.icon}
               </Link>

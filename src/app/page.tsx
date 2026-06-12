@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
-import PopularDestinations from "@/components/PopularDestinations";
-import DealsSection from "@/components/DealsSection";
+import AppDownloadSection from "@/components/AppDownloadSection";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,14 +17,14 @@ export default function Home() {
         {/* Hero & Search Forms */}
         <HeroSection />
 
-        {/* Worldwide Trust & Reviews */}
+        {/* Trust Signal: ratings + 3 feature cards */}
         <TrustSection />
 
-        {/* Popular Destinations Marquee */}
-        <PopularDestinations />
+        {/* App Download: phone mockup + QR + store badges */}
+        <AppDownloadSection />
 
-        {/* App Download & FAQ */}
-        <DealsSection />
+        {/* FAQ Accordion */}
+        <FaqSection />
       </main>
 
       {/* Footer */}

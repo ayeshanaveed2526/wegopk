@@ -142,7 +142,7 @@ export default function FlightSearchForm() {
 
           {/* Payment Types */}
           <button className="flex items-center space-x-1.5 text-sm font-bold text-gray-700 hover:text-[#44B50C] transition-colors">
-            <span>5 Payment Types</span>
+            <span>0 Payment Types</span>
             <svg className="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
               <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
