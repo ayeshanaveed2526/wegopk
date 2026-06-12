@@ -34,36 +34,55 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-white py-12 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section style={{ backgroundColor: "#ffffff", padding: "48px 0 80px" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
 
-        <h2 className="text-2xl font-black text-[#1D1D1D] mb-6">
+        <h2 style={{ fontSize: "24px", fontWeight: 900, color: "#1D1D1D", marginBottom: "24px", letterSpacing: "-0.02em" }}>
           Frequently asked questions
         </h2>
 
-        <div className="border border-[#DFDFDF] rounded-2xl overflow-hidden divide-y divide-[#DFDFDF]">
+        <div style={{ border: "1px solid #DFDFDF", borderRadius: "16px", overflow: "hidden" }}>
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
-              <div key={i}>
+              <div key={i} style={{ borderBottom: i === faqs.length - 1 ? "none" : "1px solid #DFDFDF" }}>
                 <button
                   id={`faq-btn-${i}`}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${i}`}
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-left cursor-pointer hover:bg-[#FAFAFA] transition-colors group"
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "16px 24px",
+                    textAlign: "left",
+                    cursor: "pointer",
+                    backgroundColor: "transparent",
+                    border: "none",
+                    outline: "none",
+                    transition: "background-color 0.15s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FAFAFA")}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                 >
-                  <span className="font-semibold text-[#1D1D1D] text-sm md:text-base pr-4">
+                  <span style={{ fontWeight: 600, color: "#1D1D1D", fontSize: "16px", paddingRight: "16px" }}>
                     {faq.question}
                   </span>
                   <svg
-                    className={`w-5 h-5 text-[#767676] flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "#767676",
+                      flexShrink: 0,
+                      transform: isOpen ? "rotate(180deg)" : "none",
+                      transition: "transform 0.2s ease-in-out",
+                    }}
                   >
                     <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -74,11 +93,14 @@ export default function FaqSection() {
                   id={`faq-answer-${i}`}
                   role="region"
                   aria-labelledby={`faq-btn-${i}`}
-                  className={`overflow-hidden transition-all duration-200 ${
-                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                  style={{
+                    maxHeight: isOpen ? "400px" : "0",
+                    opacity: isOpen ? 1 : 0,
+                    overflow: "hidden",
+                    transition: "all 0.2s ease-in-out",
+                  }}
                 >
-                  <p className="px-6 pb-5 pt-1 text-[#767676] text-sm leading-relaxed">
+                  <p style={{ padding: "4px 24px 20px", color: "#767676", fontSize: "14px", lineHeight: 1.6, margin: 0 }}>
                     {faq.answer}
                   </p>
                 </div>
