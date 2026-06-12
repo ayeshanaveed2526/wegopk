@@ -26,7 +26,7 @@ export const popularDestinations: Destination[] = [
     code: "DXB",
     price: "PKR 48,500",
     route: "KHI → DXB",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
+    image: "/images/dubai.jpg",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const popularDestinations: Destination[] = [
     code: "IST",
     price: "PKR 98,200",
     route: "KHI → IST",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80",
+    image: "/images/istanbul.jpg",
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ export const popularDestinations: Destination[] = [
     code: "LHR",
     price: "PKR 142,000",
     route: "KHI → LHR",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80",
+    image: "/images/london.jpg",
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ export const popularDestinations: Destination[] = [
     code: "BKK",
     price: "PKR 62,300",
     route: "LHE → BKK",
-    image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80",
+    image: "/images/bangkok.jpg",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const popularDestinations: Destination[] = [
     code: "JED",
     price: "PKR 54,900",
     route: "KHI → JED",
-    image: "https://images.unsplash.com/photo-1568322445389-f64ac2515099?auto=format&fit=crop&w=600&q=80",
+    image: "/images/jeddah.jpg",
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ export const popularDestinations: Destination[] = [
     code: "KUL",
     price: "PKR 72,800",
     route: "KHI → KUL",
-    image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80",
+    image: "/images/kualalumpur.jpg",
   },
   {
     id: 7,
@@ -80,7 +80,7 @@ export const popularDestinations: Destination[] = [
     code: "YYZ",
     price: "PKR 218,000",
     route: "ISB → YYZ",
-    image: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&w=600&q=80",
+    image: "/images/toronto.jpg",
   },
   {
     id: 8,
@@ -89,7 +89,7 @@ export const popularDestinations: Destination[] = [
     code: "RUH",
     price: "PKR 51,200",
     route: "KHI → RUH",
-    image: "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=600&q=80",
+    image: "/images/riyadh.jpg",
   },
   {
     id: 9,
@@ -98,7 +98,7 @@ export const popularDestinations: Destination[] = [
     code: "JFK",
     price: "PKR 256,000",
     route: "KHI → JFK",
-    image: "https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=600&q=80",
+    image: "/images/newyork.jpg",
   },
   {
     id: 10,
@@ -107,7 +107,7 @@ export const popularDestinations: Destination[] = [
     code: "MCT",
     price: "PKR 38,700",
     route: "KHI → MCT",
-    image: "https://images.unsplash.com/photo-1601972599748-bf11b788e8e2?auto=format&fit=crop&w=600&q=80",
+    image: "/images/muscat.jpg",
   },
 ];
 

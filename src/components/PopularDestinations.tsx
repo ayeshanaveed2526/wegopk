@@ -20,7 +20,7 @@ export default function PopularDestinations() {
               Flights from Pakistan
             </p>
             <h2 className="text-2xl sm:text-[28px] font-black text-[#1D1D1D] leading-tight tracking-tight">
-              Popular Destinations from Pakistan
+              Popular Destinations from Karachi
             </h2>
             <p className="mt-2 text-[#767676] text-sm max-w-md">
               Compare prices across 1,000+ sites and find your next adventure

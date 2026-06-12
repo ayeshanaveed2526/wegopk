@@ -5,34 +5,31 @@ import React from "react";
 const partners = [
   {
     name: "FlyJinnah",
-    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/9P.png",
+    url: "/images/9P.png",
   },
   {
     name: "AirSial",
-    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/PF.png",
+    url: "/images/PF.png",
   },
   {
     name: "Pakistan International Airlines",
-    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/PK.png",
+    url: "/images/PK.png",
   },
   {
     name: "airblue",
-    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/airlines_rectangular/PA.png",
+    url: "/images/PA.png",
   },
   {
     name: "sastaticket.pk",
-    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/providers/sastaticket_pk.png",
-    fallback: <span style={{ color: "#2E57A6", fontWeight: 700, fontSize: "14px" }}>sastaticket<span style={{ fontSize: "11px", color: "#666" }}>.pk</span></span>
+    fallback: <span style={{ color: "#2E57A6", fontWeight: 700, fontSize: "15px", letterSpacing: "-0.5px" }}>sastaticket<span style={{ fontSize: "11px", color: "#666" }}>.pk</span></span>
   },
   {
     name: "Sky-tours",
-    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/providers/sky_tours.png",
-    fallback: <span style={{ color: "#0090CC", fontWeight: 900, fontSize: "18px", fontStyle: "italic" }}>Sky<span style={{ color: "#E1173F" }}>-tours</span></span>
+    fallback: <span style={{ color: "#0090CC", fontWeight: 900, fontSize: "18px", fontStyle: "italic", letterSpacing: "-1px" }}>Sky<span style={{ color: "#E1173F" }}>-tours</span></span>
   },
   {
     name: "OneTravel",
-    url: "https://assets.wego.com/image/upload/c_fit,w_100,h_30/v20230801/flights/providers/onetravel.png",
-    fallback: <span style={{ color: "#FF690F", fontWeight: 800, fontSize: "16px" }}>OneTravel</span>
+    fallback: <span style={{ color: "#FF690F", fontWeight: 800, fontSize: "16px", letterSpacing: "-0.5px" }}>OneTravel</span>
   },
 ];
 
@@ -65,35 +62,25 @@ export default function TravelWebsites() {
         </h2>
 
         {/* ── LOGOS ROW ── */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "36px", flexWrap: "wrap", opacity: 0.9, marginBottom: "80px" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyItems: "center", justifyContent: "center", gap: "36px", flexWrap: "wrap", opacity: 0.9, marginBottom: "80px" }}>
           {partners.map((partner) => (
             <div key={partner.name} style={{ display: "flex", alignItems: "center", justifyContent: "center", minWidth: "60px", height: "30px" }}>
-              <img
-                src={partner.url}
-                alt={partner.name}
-                style={{ width: "auto", height: "100%", objectFit: "contain", filter: "grayscale(0%)" }}
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  if (e.currentTarget.nextElementSibling) {
-                    (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'block';
-                  }
-                }}
-              />
-              {/* Fallback element if image fails to load */}
-              <div style={{ display: "none" }}>
-                {partner.fallback || (
-                  <span style={{ fontWeight: 700, fontSize: "14px", color: "#1D1D1D" }}>
-                    {partner.name}
-                  </span>
-                )}
-              </div>
+              {partner.url ? (
+                <img
+                  src={partner.url}
+                  alt={partner.name}
+                  style={{ width: "auto", height: "100%", objectFit: "contain", filter: "grayscale(0%)" }}
+                />
+              ) : (
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
+                  {partner.fallback}
+                </div>
+              )}
             </div>
           ))}
 
           {/* "...and more!" text */}
-          <div style={{ fontSize: "14px", color: "#1D1D1D", fontWeight: 500 }}>
-            ...and more!
-          </div>
+
         </div>
 
         {/* ── MASCOTS ROW ── */}
