@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -47,6 +48,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head>
+        {process.env.NODE_ENV === "development" && (
+          <Script
+            src="//unpkg.com/react-grab/dist/index.global.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+            data-options={JSON.stringify(
+              { activationMode: "toggle", allowActivationInsideInput: true, maxContextLines: 3 }
+            )}
+          />
+        )}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

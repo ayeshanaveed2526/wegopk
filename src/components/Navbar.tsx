@@ -1,168 +1,72 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 4);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 w-full transition-shadow duration-200"
-      style={{
-        backgroundColor: "#0090CC",
-        boxShadow: scrolled ? "0 2px 8px rgba(0,0,0,0.18)" : "none",
-        height: "64px",
-      }}
-    >
-      <div className="h-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-
-        {/* ── LOGO ── */}
-        <Link href="/" className="flex items-center gap-[5px] flex-shrink-0 group" aria-label="Wego home">
-          {/* "wego" italic text */}
-          <span
-            className="text-white font-black text-[26px] leading-none select-none"
-            style={{ fontStyle: "italic", letterSpacing: "-0.04em", fontFamily: "Inter, sans-serif" }}
-          >
-            wego
-          </span>
-          {/* Green plane box */}
-          <div
-            className="flex items-center justify-center rounded-[6px] flex-shrink-0"
-            style={{ backgroundColor: "#44B50C", width: "24px", height: "24px" }}
-          >
-            <svg viewBox="0 0 24 24" fill="white" width="13" height="13">
-              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z" />
-            </svg>
+    <header className="absolute top-0 w-full z-50">
+      <div className="mx-auto flex h-16 max-w-[1200px] items-center px-4 sm:h-[72px] sm:px-6 lg:px-8">
+        
+        {/* Left: Logo (White variant from bottom of sprite) */}
+        <Link href="/" className="flex shrink-0 items-center">
+          <div className="overflow-hidden h-7 w-[76px] sm:h-8 sm:w-[86px] relative">
+            <img
+              src="https://zen.wego.com/cdn-cgi/image/format=auto,quality=100,height=162,width=200/web/sprites/roxana-wego-logo.png"
+              alt="Wego"
+              className="absolute bottom-0 left-0 w-full h-auto"
+            />
           </div>
         </Link>
 
-        {/* ── DESKTOP RIGHT NAV ── */}
-        <nav
-          className="hidden md:flex items-center text-white"
-          style={{ gap: "20px", fontSize: "14px", fontWeight: 600 }}
-        >
+        {/* Right Side */}
+        <div className="ml-auto flex items-center gap-4 lg:gap-5">
+          
           {/* WegoPro */}
-          <Link
-            href="https://www.wegopro.com/en/wego-for-business?utm_source=wego&utm_medium=web&utm_campaign=top-nav-bar"
-            target="_blank"
-            className="flex items-center gap-[8px] hover:opacity-80 transition-opacity"
-          >
-            {/* Crystal icon */}
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="14" r="13" stroke="#7DD8F8" strokeWidth="1" opacity="0.5" />
-              <polygon
-                points="14,4 17,12 25,12 18.5,17 21,25 14,20 7,25 9.5,17 3,12 11,12"
-                fill="#7DD8F8"
-                opacity="0.85"
-              />
+          <Link href="#" className="hidden lg:flex items-center gap-2.5 text-white hover:opacity-80 transition-opacity">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-[#00c5ff]">
+              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
             </svg>
-            <div className="leading-none">
-              <div style={{ fontSize: "14px", fontWeight: 900, color: "#fff", lineHeight: 1 }}>WegoPro</div>
-              <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", fontWeight: 500, lineHeight: 1.3, marginTop: "2px" }}>
-                for Business Travel
-              </div>
+            <div className="flex flex-col">
+              <span className="text-[15px] font-bold leading-tight tracking-wide">WegoPro</span>
+              <span className="text-[11px] font-medium text-white/90 leading-tight">for Business Travel</span>
             </div>
           </Link>
 
           {/* Divider */}
-          <div style={{ width: "1px", height: "20px", background: "rgba(255,255,255,0.3)" }} />
+          <div className="hidden lg:block w-px h-6 bg-white/30 ml-2" />
 
-          {/* Flag + EN + PKR */}
-          <button
-            className="flex items-center hover:opacity-80 transition-opacity"
-            style={{ gap: "5px" }}
-            aria-label="Change language and currency"
-          >
-            <span style={{ fontSize: "18px", lineHeight: 1 }}>🇵🇰</span>
-            <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "14px" }}>|</span>
-            <span style={{ fontSize: "14px", fontWeight: 700 }}>EN</span>
-            <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "14px" }}>|</span>
-            <span style={{ fontSize: "14px", fontWeight: 700 }}>PKR</span>
+          {/* Locale / Currency */}
+          <div className="hidden md:flex items-center gap-3 text-white font-semibold text-[14px] ml-2 tracking-wide">
+            <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan" className="w-[20px] h-[14px] rounded-[2px] object-cover" />
+            <span className="text-white/50 font-medium">|</span>
+            <button className="hover:opacity-80 transition-opacity">EN</button>
+            <span className="text-white/50 font-medium">|</span>
+            <button className="hover:opacity-80 transition-opacity">PKR</button>
+          </div>
+
+          {/* Support / My Trips */}
+          <div className="hidden md:flex items-center gap-6 text-white font-semibold text-[14px] ml-4 tracking-wide">
+            <Link href="#" className="hover:opacity-80 transition-opacity">Support</Link>
+            <Link href="#" className="hover:opacity-80 transition-opacity">My Trips</Link>
+          </div>
+
+          {/* Login Button */}
+          <button className="ml-2 px-6 py-2 rounded-full border border-white text-white font-semibold text-[14px] tracking-wide hover:bg-white/10 transition-colors">
+            Login
           </button>
 
-          {/* Support */}
-          <Link
-            href="https://support.wego.com/"
-            target="_blank"
-            className="hover:opacity-80 transition-opacity"
-            style={{ fontSize: "14px", fontWeight: 600 }}
+          {/* Mobile Menu Toggle */}
+          <button
+            type="button"
+            className="md:hidden ml-2 inline-flex h-9 w-9 items-center justify-center rounded-full text-white hover:bg-white/10 transition-colors"
+            aria-label="Open menu"
           >
-            Support
-          </Link>
-
-          {/* My Trips */}
-          <Link
-            href="#"
-            className="hover:opacity-80 transition-opacity"
-            style={{ fontSize: "14px", fontWeight: 600 }}
-          >
-            My Trips
-          </Link>
-
-          {/* Login */}
-          <Link
-            href="#"
-            className="hover:bg-white/10 transition-colors"
-            style={{
-              border: "1.5px solid rgba(255,255,255,0.85)",
-              borderRadius: "9999px",
-              padding: "6px 20px",
-              fontSize: "14px",
-              fontWeight: 700,
-              color: "#fff",
-            }}
-          >
-            Login
-          </Link>
-        </nav>
-
-        {/* ── MOBILE HAMBURGER ── */}
-        <button
-          className="md:hidden text-white p-1"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-            {menuOpen
-              ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            }
-          </svg>
-        </button>
-      </div>
-
-      {/* ── MOBILE MENU ── */}
-      {menuOpen && (
-        <div
-          className="md:hidden border-t border-white/20 py-4 px-4 space-y-3 text-white text-sm font-semibold"
-          style={{ backgroundColor: "#0090CC" }}
-        >
-          <Link href="https://www.wegopro.com" target="_blank" className="block hover:opacity-80">
-            WegoPro for Business
-          </Link>
-          <div className="flex items-center gap-2">
-            <span>🇵🇰</span><span>EN</span><span className="opacity-40">|</span><span>PKR</span>
-          </div>
-          <Link href="https://support.wego.com/" target="_blank" className="block hover:opacity-80">Support</Link>
-          <Link href="#" className="block hover:opacity-80">My Trips</Link>
-          <Link
-            href="#"
-            className="inline-block border border-white rounded-full px-5 py-1.5 text-sm font-bold hover:bg-white/10 transition-colors"
-          >
-            Login
-          </Link>
+            <Bars3Icon className="h-6 w-6" />
+          </button>
         </div>
-      )}
+        
+      </div>
     </header>
   );
 }

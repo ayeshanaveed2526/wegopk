@@ -1,142 +1,50 @@
 @import "tailwindcss";
 
-@theme {
-  /* ── Wego Brand Colors (source: /roxana/main.328171dc.css — Wego Web System v0.0.14) ── */
-  --color-wego-blue: #0090CC;          /* Navbar background */
-  --color-wego-green: #44B50C;         /* Primary CTA / active states */
-  --color-wego-green-dark: #188920;    /* CTA hover / pressed */
-  --color-wego-green-light: #E7FDDC;   /* Active bg / selected bg */
-  --color-wego-dark: #1D1D1D;          /* Primary text + footer bg */
-  --color-wego-grey-2: #767676;        /* Secondary / muted text */
-  --color-wego-grey-3: #BDBDBD;        /* Disabled state */
-  --color-wego-grey-4: #F4F4F4;        /* Tertiary bg */
-  --color-wego-border: #DFDFDF;        /* Default borders / inactive lines */
-  --color-wego-orange: #FF7A00;        /* "New" badge */
-  --color-wego-star: #F59E0B;          /* Star rating fill */
-  --color-wegopro-purple: #532CCE;     /* WegoPro brand */
-  --color-wegopro-light: #735CF7;      /* WegoPro accent */
-  --color-wego-bg-secondary: #FAFAFA; /* Subtle grey background */
-  --color-wego-bg-highlight: #FDF5CB; /* Highlight / promo bg */
-  --color-wego-link: #016CD5;          /* Link blue */
-  --color-wego-warning: #D85D0D;       /* Warning text */
-
-  /* ── Typography ── */
-  --font-sans: "Inter", "Noto Sans", "Geeza Pro", sans-serif;
-}
-
 :root {
   --background: #ffffff;
-  --foreground: #1D1D1D;
+  --foreground: #0f172a;
+  --wego-green: #44b50c;
+  --wego-dark-green: #298a08;
+  --wego-orange: #ff9800;
+  --wego-blue: #0051c3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-wego-green: var(--wego-green);
+  --color-wego-dark-green: var(--wego-dark-green);
+  --color-wego-orange: var(--wego-orange);
+  --color-wego-blue: var(--wego-blue);
+  --font-sans: var(--font-inter), sans-serif;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 40s linear infinite;
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-50% - 10px));
+    }
+  }
+
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(calc(-50% - 10px));
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  margin: 0;
 }
 
-/* Seamless Continuous Marquee Animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 35s linear infinite;
-}
-
-/* Pause marquee on hover */
-.animate-marquee-container:hover .animate-marquee {
-  animation-play-state: paused;
-}
-
-/* Subtle Floating Mascot Animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-
-/* Fun Dancing Mascot Animation */
-@keyframes dance {
-  0%, 100% {
-    transform: rotate(0deg) translateY(0) scale(1);
-  }
-  25% {
-    transform: rotate(-4deg) translateY(-5px) scale(1.03);
-  }
-  50% {
-    transform: rotate(0deg) translateY(0) scale(0.98);
-  }
-  75% {
-    transform: rotate(4deg) translateY(-5px) scale(1.03);
-  }
-}
-
-.animate-dance {
-  animation: dance 1.6s ease-in-out infinite;
-}
-
-/* Left Balloon Float with gentle sway */
-@keyframes balloon-left {
-  0%, 100% {
-    transform: translateY(0px) rotate(-2deg);
-  }
-  33% {
-    transform: translateY(-18px) rotate(2deg);
-  }
-  66% {
-    transform: translateY(-10px) rotate(-1deg);
-  }
-}
-
-.animate-balloon-left {
-  animation: balloon-left 6s ease-in-out infinite;
-  transform-origin: bottom center;
-}
-
-/* Right Balloon Float with different phase */
-@keyframes balloon-right {
-  0%, 100% {
-    transform: translateY(-12px) rotate(2deg);
-  }
-  40% {
-    transform: translateY(0px) rotate(-2deg);
-  }
-  70% {
-    transform: translateY(-20px) rotate(1deg);
-  }
-}
-
-.animate-balloon-right {
-  animation: balloon-right 7s ease-in-out infinite;
-  transform-origin: bottom center;
-}
-
-/* Mascot gentle bob */
-@keyframes mascot-bob {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-mascot {
-  animation: mascot-bob 3.5s ease-in-out infinite;
-  transform-origin: bottom center;
+* {
+  box-sizing: border-box;
 }

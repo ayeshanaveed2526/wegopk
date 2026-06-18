@@ -1,15 +1,26 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
 import Footer from "@/components/Footer";
+import TrustSection from "@/components/TrustSection";
+import TravelWebsites from "@/components/TravelWebsites";
+import FeatureCards from "@/components/FeatureCards";
+import PopularDestinations from "@/components/PopularDestinations";
+import AppDownloadSection from "@/components/AppDownloadSection";
+import ChatbotButton from "@/components/ChatbotButton";
+import FaqSection from "@/components/FaqSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col">
+    <main className="min-h-screen bg-white flex flex-col">
       <Navbar />
       <Hero />
-      <Features />
-      <div className="flex-1"></div>
+      <TrustSection />
+      <TravelWebsites />
+      <FeatureCards />
+      <PopularDestinations />
+      <AppDownloadSection />
+      <ChatbotButton />
+      <FaqSection />
       <Footer />
     </main>
   );
