@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f4f4;
+  --foreground: #1d1d1d;
+  --wego-green: #44b50c;
+  --wego-dark-green: #298a08;
+  --wego-orange: #ff9800;
+  --wego-blue: #0051c3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-wego-green: var(--wego-green);
+  --color-wego-dark-green: var(--wego-dark-green);
+  --color-wego-orange: var(--wego-orange);
+  --color-wego-blue: var(--wego-blue);
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
