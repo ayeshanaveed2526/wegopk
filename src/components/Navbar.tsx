@@ -56,8 +56,10 @@ export default function Navbar() {
         <div className="ml-auto flex items-center gap-4 lg:gap-5 relative z-10">
           {/* WegoPro */}
           <Link href="#" className={`hidden items-center gap-2.5 hover:opacity-80 transition-opacity ${isScrolled ? "opacity-0 absolute pointer-events-none invisible" : "lg:flex relative"}`}>
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-[#00c5ff]">
-              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="12.5" y1="12" x2="8" y2="19" stroke="#00c5ff" strokeWidth="4.5" strokeLinecap="round" />
+              <line x1="12.5" y1="12" x2="8" y2="5" stroke="#00c5ff" strokeWidth="4.5" strokeLinecap="round" />
+              <line x1="5" y1="12" x2="20" y2="12" stroke="#0077ff" strokeWidth="4.5" strokeLinecap="round" />
             </svg>
             <div className="flex flex-col">
               <span className={`text-[15px] font-bold leading-tight tracking-wide transition-colors ${isScrolled ? "text-slate-800" : "text-white"}`}>WegoPro</span>

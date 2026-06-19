@@ -211,7 +211,7 @@ export default function Hero() {
                           Direct Only
                         </label>
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
-                          <div className="flex flex-wrap items-center gap-8 text-[15.5px] text-[#2c2c2c] font-normal mr-2">
+                          <div className="flex flex-wrap items-center gap-8 text-[18px] text-[#2c2c2c] font-normal mr-2">
                             <button className="flex items-center gap-2.5 transition-colors hover:text-slate-900">
                               1 Adult
                               <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#1a1a1a]"><path d="M7 10l5 5 5-5z" /></svg>
@@ -255,7 +255,6 @@ export default function Hero() {
                   <img src="/images/Visa_358279377.png" alt="Visa" className="h-5 w-5 object-contain" />
                   <span className="text-[14px] font-medium text-slate-900">e-Visa</span>
                 </button>
-
                 <div className="h-8 w-px bg-slate-200" />
 
                 <button className="flex items-center gap-2 rounded-r-2xl px-5 py-3 transition-colors hover:bg-slate-50 sm:px-7">

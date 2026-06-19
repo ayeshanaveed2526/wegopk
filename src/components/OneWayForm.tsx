@@ -31,8 +31,8 @@ export default function OneWayForm() {
             {/* Mask right border */}
             <div className="absolute right-[-1px] top-1/2 -translate-y-1/2 w-[2px] h-[34px] bg-white pointer-events-none z-10"></div>
             {/* Concave curve pointing left (on the right side of From) */}
-            <div 
-              className="absolute right-[-17px] top-1/2 -translate-y-1/2 w-[34px] h-[34px] rounded-full border border-slate-200 group-focus-within:border-[#44b50c] pointer-events-none z-20 transition-colors" 
+            <div
+              className="absolute right-[-17px] top-1/2 -translate-y-1/2 w-[34px] h-[34px] rounded-full border border-slate-200 group-focus-within:border-[#44b50c] pointer-events-none z-20 transition-colors"
               style={{ clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)" }}
             ></div>
           </div>
@@ -59,8 +59,8 @@ export default function OneWayForm() {
             {/* Mask left border */}
             <div className="absolute left-[-1px] top-1/2 -translate-y-1/2 w-[2px] h-[34px] bg-white pointer-events-none z-10"></div>
             {/* Concave curve pointing right (on the left side of To) */}
-            <div 
-              className="absolute left-[-17px] top-1/2 -translate-y-1/2 w-[34px] h-[34px] rounded-full border border-slate-200 group-focus-within:border-[#44b50c] pointer-events-none z-20 transition-colors" 
+            <div
+              className="absolute left-[-17px] top-1/2 -translate-y-1/2 w-[34px] h-[34px] rounded-full border border-slate-200 group-focus-within:border-[#44b50c] pointer-events-none z-20 transition-colors"
               style={{ clipPath: "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)" }}
             ></div>
           </div>
@@ -94,7 +94,7 @@ export default function OneWayForm() {
           Direct Only
         </label>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
-          <div className="flex flex-wrap items-center gap-8 text-[15.5px] text-[#2c2c2c] font-normal mr-2">
+          <div className="flex flex-wrap items-center gap-8 text-[18px] text-[#2c2c2c] font-normal mr-2">
             <button className="flex items-center gap-2.5 transition-colors hover:text-slate-900">
               1 Adult
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#1a1a1a]"><path d="M7 10l5 5 5-5z" /></svg>

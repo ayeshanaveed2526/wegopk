@@ -118,7 +118,7 @@ export default function MultiCityForm() {
         </button>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 pr-8">
-          <div className="flex flex-wrap items-center gap-6 text-[15.5px] text-[#2c2c2c] font-normal mr-2">
+          <div className="flex flex-wrap items-center gap-6 text-[18px] text-[#2c2c2c] font-semibold mr-2">
             <button className="flex items-center gap-2 transition-colors hover:text-slate-900">
               1 Adult
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#1a1a1a]">
