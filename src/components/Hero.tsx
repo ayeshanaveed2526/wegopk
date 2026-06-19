@@ -79,7 +79,7 @@ export default function Hero() {
           {/* Search card */}
           <div className="relative w-full max-w-[1380px]">
             {/* Mascot Image */}
-            <div className="absolute -top-[180px] right-[5%] z-0 hidden w-[240px] md:block lg:-top-[260px] lg:right-[8%] lg:w-[340px] pointer-events-none">
+            <div className="absolute -top-[130px] right-[10%] z-0 hidden w-[180px] md:block lg:-top-[160px] lg:right-[5%] lg:w-[220px] pointer-events-none">
               <img src="/weegio_354916968.png" alt="Wego Mascot" className="h-full w-full object-contain drop-shadow-lg" />
             </div>
 
@@ -210,35 +210,35 @@ export default function Hero() {
               {activeTab === "cars" && <CarRentalForm />}
             </div>
 
-              {/* Umrah e-Visa / e-Visa / eSIM pill */}
-              <div className="relative mt-[70px] flex w-full items-center justify-center">
-                <div className="relative inline-flex items-center rounded-2xl bg-white shadow-[0_8px_30px_rgba(15,23,42,0.10)]">
-                  <span className="absolute -top-[10px] left-6 rounded-[4px] bg-[#ff8c00] px-1.5 py-px text-[11px] font-bold text-white shadow-sm">
-                    New
-                  </span>
-                  <button className="flex items-center gap-2 rounded-l-2xl px-5 py-3 transition-colors hover:bg-slate-50 sm:px-7">
-                    <img src="/images/Umrah@3x_376857943.png" alt="Umrah" className="h-5 w-5 object-contain" />
-                    <span className="text-[14px] font-medium text-slate-900">Umrah e-Visa</span>
-                  </button>
+            {/* Umrah e-Visa / e-Visa / eSIM pill */}
+            <div className="relative mt-[70px] flex w-full items-center justify-center">
+              <div className="relative inline-flex items-center rounded-2xl bg-white shadow-[0_8px_30px_rgba(15,23,42,0.10)]">
+                <span className="absolute -top-[10px] left-6 rounded-[4px] bg-[#ff8c00] px-1.5 py-px text-[11px] font-bold text-white shadow-sm">
+                  New
+                </span>
+                <button className="flex items-center gap-2 rounded-l-2xl px-5 py-3 transition-colors hover:bg-slate-50 sm:px-7">
+                  <img src="/images/Umrah@3x_376857943.png" alt="Umrah" className="h-5 w-5 object-contain" />
+                  <span className="text-[14px] font-medium text-slate-900">Umrah e-Visa</span>
+                </button>
 
-                  <div className="h-8 w-px bg-slate-200" />
+                <div className="h-8 w-px bg-slate-200" />
 
-                  <button className="flex items-center gap-2 px-5 py-3 transition-colors hover:bg-slate-50 sm:px-7">
-                    <img src="/images/Visa_358279377.png" alt="Visa" className="h-5 w-5 object-contain" />
-                    <span className="text-[14px] font-medium text-slate-900">e-Visa</span>
-                  </button>
+                <button className="flex items-center gap-2 px-5 py-3 transition-colors hover:bg-slate-50 sm:px-7">
+                  <img src="/images/Visa_358279377.png" alt="Visa" className="h-5 w-5 object-contain" />
+                  <span className="text-[14px] font-medium text-slate-900">e-Visa</span>
+                </button>
 
-                  <div className="h-8 w-px bg-slate-200" />
+                <div className="h-8 w-px bg-slate-200" />
 
-                  <button className="flex items-center gap-2 rounded-r-2xl px-5 py-3 transition-colors hover:bg-slate-50 sm:px-7">
-                    <img src="/images/eSIM_358279346.png" alt="eSIM" className="h-5 w-5 object-contain" />
-                    <span className="text-[14px] font-medium text-slate-900">eSIM</span>
-                  </button>
-                </div>
+                <button className="flex items-center gap-2 rounded-r-2xl px-5 py-3 transition-colors hover:bg-slate-50 sm:px-7">
+                  <img src="/images/eSIM_358279346.png" alt="eSIM" className="h-5 w-5 object-contain" />
+                  <span className="text-[14px] font-medium text-slate-900">eSIM</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 }
