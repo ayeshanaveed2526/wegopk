@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   ArrowsRightLeftIcon,
   ChevronLeftIcon,
@@ -7,6 +8,9 @@ import {
 } from "@heroicons/react/24/outline";
 
 export default function OneWayForm() {
+  const [fromLocation, setFromLocation] = useState("Marseille (MRS)");
+  const [toLocation, setToLocation] = useState("");
+  const [departDate, setDepartDate] = useState("Sat, 20 Jun 2026");
   return (
     <>
       <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
@@ -14,9 +18,15 @@ export default function OneWayForm() {
         <div className="flex w-full relative h-[60px]">
           {/* FROM */}
           <div className="relative flex-1 group z-10 focus-within:z-20">
-            <div className="h-full rounded-l-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 transition-colors">
+            <div className="h-full flex flex-col justify-center rounded-l-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 transition-colors">
               <div className="text-[13px] font-semibold text-slate-500">From</div>
-              <div className="truncate text-[16px] font-bold tracking-tight text-slate-900">Marseille (MRS)</div>
+              <input
+                type="text"
+                value={fromLocation}
+                onChange={(e) => setFromLocation(e.target.value)}
+                placeholder="City or airport"
+                className="w-full text-[16px] font-bold tracking-tight text-slate-900 outline-none bg-transparent truncate"
+              />
             </div>
             {/* Mask right border */}
             <div className="absolute right-[-1px] top-1/2 -translate-y-1/2 w-[2px] h-[34px] bg-white pointer-events-none z-10"></div>
@@ -36,9 +46,15 @@ export default function OneWayForm() {
 
           {/* TO */}
           <div className="relative flex-1 group z-10 focus-within:z-20">
-            <div className="h-full rounded-r-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 pl-6 transition-colors">
+            <div className="h-full flex flex-col justify-center rounded-r-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 pl-6 transition-colors">
               <div className="text-[13px] font-semibold text-slate-500">To</div>
-              <div className="truncate text-[16px] font-medium text-slate-400">To</div>
+              <input
+                type="text"
+                value={toLocation}
+                onChange={(e) => setToLocation(e.target.value)}
+                placeholder="Destination"
+                className="w-full text-[16px] font-medium text-slate-900 outline-none bg-transparent truncate"
+              />
             </div>
             {/* Mask left border */}
             <div className="absolute left-[-1px] top-1/2 -translate-y-1/2 w-[2px] h-[34px] bg-white pointer-events-none z-10"></div>
@@ -52,9 +68,15 @@ export default function OneWayForm() {
 
         {/* Depart */}
         <div className="flex h-[60px] overflow-hidden rounded-2xl border border-slate-200 bg-white group focus-within:border-[#44b50c] transition-colors">
-          <div className="flex-1 px-4 py-1.5">
+          <div className="flex-1 px-4 py-1.5 flex flex-col justify-center">
             <div className="text-[13px] font-semibold text-slate-500">Depart</div>
-            <div className="text-[16px] font-bold tracking-tight text-slate-900">Sat, 20 Jun 2026</div>
+            <input
+              type="text"
+              value={departDate}
+              onChange={(e) => setDepartDate(e.target.value)}
+              placeholder="Add date"
+              className="w-full text-[16px] font-bold tracking-tight text-slate-900 outline-none bg-transparent truncate"
+            />
           </div>
           <div className="flex items-center gap-3 px-4 text-slate-400">
             <ChevronLeftIcon className="h-4 w-4 hover:text-slate-600 cursor-pointer" />

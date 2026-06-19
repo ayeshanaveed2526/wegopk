@@ -15,9 +15,11 @@ export default function TravelWebsites() {
         <h2 className="text-[36px] font-semibold tracking-tight text-slate-900">700+ travel websites. One simple search.</h2>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
           {logos.map((logo) => (
-            <img key={logo} src={logo} alt="" className="h-8 w-auto object-contain" />
+            <a href="#" key={logo} className="transition-transform duration-200 hover:scale-110 hover:opacity-80">
+              <img src={logo} alt="" className="h-8 w-auto object-contain" />
+            </a>
           ))}
-          <span className="text-[22px] text-slate-900">...and more!</span>
+          <span className="text-[22px] text-slate-900 select-none">...and more!</span>
         </div>
       </div>
     </section>

@@ -15,6 +15,10 @@ import CarRentalForm from "./CarRentalForm";
 export default function Hero() {
   const [activeTab, setActiveTab] = useState("flights");
   const [tripType, setTripType] = useState("round-trip");
+  const [fromLocation, setFromLocation] = useState("Marseille (MRS)");
+  const [toLocation, setToLocation] = useState("");
+  const [departDate, setDepartDate] = useState("Sat, 20 Jun 2026");
+  const [returnDate, setReturnDate] = useState("");
 
   return (
     <section className="relative bg-[#ffffff]">
@@ -83,27 +87,27 @@ export default function Hero() {
               <img src="/weegio_354916968.png" alt="Wego Mascot" className="h-full w-full object-contain drop-shadow-lg" />
             </div>
 
-            <div className="w-full rounded-[24px] bg-white p-5 shadow-[0_18px_60px_rgba(15,23,42,0.18)] sm:p-7 relative z-10">
+            <div className="w-full rounded-[24px] bg-white p-4 sm:p-5 lg:p-6 shadow-[0_18px_60px_rgba(15,23,42,0.18)] relative z-10">
               {activeTab === "flights" && (
                 <>
                   <div className="mb-4 flex flex-wrap gap-2">
                     <button
                       onClick={() => setTripType("one-way")}
-                      className={`rounded-full px-4 py-2 text-[14px] font-medium ${tripType === "one-way" ? "bg-[#e7fddc] text-[#298a08]" : "bg-slate-100 text-slate-700"
+                      className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${tripType === "one-way" ? "bg-[#e7fddc] text-[#298a08] hover:bg-[#d8f4cb]" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                         }`}
                     >
                       One-way
                     </button>
                     <button
                       onClick={() => setTripType("round-trip")}
-                      className={`rounded-full px-4 py-2 text-[14px] font-medium ${tripType === "round-trip" ? "bg-[#e7fddc] text-[#298a08]" : "bg-slate-100 text-slate-700"
+                      className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${tripType === "round-trip" ? "bg-[#e7fddc] text-[#298a08] hover:bg-[#d8f4cb]" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                         }`}
                     >
                       Round-trip
                     </button>
                     <button
                       onClick={() => setTripType("multi-city")}
-                      className={`rounded-full px-4 py-2 text-[14px] font-medium ${tripType === "multi-city" ? "bg-[#e7fddc] text-[#298a08]" : "bg-slate-100 text-slate-700"
+                      className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${tripType === "multi-city" ? "bg-[#e7fddc] text-[#298a08] hover:bg-[#d8f4cb]" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                         }`}
                     >
                       Multi-city
@@ -119,9 +123,15 @@ export default function Hero() {
                         <div className="flex w-full relative h-[60px]">
                           {/* FROM */}
                           <div className="relative flex-1 group z-10 focus-within:z-20">
-                            <div className="h-full rounded-l-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 transition-colors">
+                            <div className="h-full flex flex-col justify-center rounded-l-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 transition-colors">
                               <div className="text-[13px] font-semibold text-slate-500">From</div>
-                              <div className="truncate text-[16px] font-bold tracking-tight text-slate-900">Marseille (MRS)</div>
+                              <input
+                                type="text"
+                                value={fromLocation}
+                                onChange={(e) => setFromLocation(e.target.value)}
+                                placeholder="City or airport"
+                                className="w-full text-[16px] font-bold tracking-tight text-slate-900 outline-none bg-transparent truncate"
+                              />
                             </div>
                             {/* Mask right border */}
                             <div className="absolute right-[-1px] top-1/2 -translate-y-1/2 w-[2px] h-[34px] bg-white pointer-events-none z-10"></div>
@@ -141,9 +151,15 @@ export default function Hero() {
 
                           {/* TO */}
                           <div className="relative flex-1 group z-10 focus-within:z-20">
-                            <div className="h-full rounded-r-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 pl-6 transition-colors">
+                            <div className="h-full flex flex-col justify-center rounded-r-2xl border border-slate-200 group-focus-within:border-[#44b50c] bg-white px-4 py-1.5 pl-6 transition-colors">
                               <div className="text-[13px] font-semibold text-slate-500">To</div>
-                              <div className="truncate text-[16px] font-medium text-slate-400">To</div>
+                              <input
+                                type="text"
+                                value={toLocation}
+                                onChange={(e) => setToLocation(e.target.value)}
+                                placeholder="Destination"
+                                className="w-full text-[16px] font-medium text-slate-900 outline-none bg-transparent truncate"
+                              />
                             </div>
                             {/* Mask left border */}
                             <div className="absolute left-[-1px] top-1/2 -translate-y-1/2 w-[2px] h-[34px] bg-white pointer-events-none z-10"></div>
@@ -158,18 +174,30 @@ export default function Hero() {
                         {/* Depart & Return */}
                         <div className="flex h-[60px] overflow-hidden rounded-2xl border border-slate-200 bg-white group focus-within:border-[#44b50c] transition-colors">
                           <div className="flex-1 px-4 py-1.5 border-r border-slate-200 flex justify-between items-center group-focus-within:border-[#44b50c]">
-                            <div>
+                            <div className="flex-1">
                               <div className="text-[13px] font-semibold text-slate-500">Depart</div>
-                              <div className="text-[16px] font-bold tracking-tight text-slate-900">Sat, 20 Jun 2026</div>
+                              <input
+                                type="text"
+                                value={departDate}
+                                onChange={(e) => setDepartDate(e.target.value)}
+                                placeholder="Add date"
+                                className="w-full text-[16px] font-bold tracking-tight text-slate-900 outline-none bg-transparent truncate"
+                              />
                             </div>
                             <div className="flex items-center gap-3 text-slate-400">
                               <ChevronLeftIcon className="h-4 w-4 hover:text-slate-600 cursor-pointer" />
                               <ChevronRightIcon className="h-4 w-4 text-[#44b50c] cursor-pointer" />
                             </div>
                           </div>
-                          <div className="flex-1 px-4 py-1.5">
+                          <div className="flex-1 px-4 py-1.5 flex flex-col justify-center">
                             <div className="text-[13px] font-semibold text-slate-500">Return</div>
-                            <div className="text-[16px] font-medium text-slate-400">Return</div>
+                            <input
+                              type="text"
+                              value={returnDate}
+                              onChange={(e) => setReturnDate(e.target.value)}
+                              placeholder="Add date"
+                              className="w-full text-[16px] font-medium text-slate-900 outline-none bg-transparent truncate"
+                            />
                           </div>
                         </div>
                       </div>

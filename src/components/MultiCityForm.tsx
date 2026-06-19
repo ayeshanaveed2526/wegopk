@@ -25,21 +25,27 @@ export default function MultiCityForm() {
     setFlights(flights.filter((f) => f.id !== id));
   };
 
+  const updateFlight = (id: number, field: string, value: string) => {
+    setFlights(flights.map((f) => (f.id === id ? { ...f, [field]: value } : f)));
+  };
+
   return (
     <div className="flex flex-col gap-3">
       {flights.map((flight, index) => (
         <div key={flight.id} className="flex flex-col lg:flex-row items-center gap-3 w-full">
           {/* From / To group */}
           <div className="flex items-center w-full lg:w-[65%] relative">
-            <div className="flex-1 rounded-2xl border border-slate-200 bg-white px-4 py-3">
+            <div className="flex-1 flex flex-col justify-center rounded-2xl border border-slate-200 bg-white px-4 py-3 group focus-within:border-[#44b50c] transition-colors">
               <div className="text-[13px] font-semibold text-slate-500">From</div>
-              <div
-                className={`truncate text-[18px] ${
+              <input
+                type="text"
+                value={flight.from}
+                onChange={(e) => updateFlight(flight.id, "from", e.target.value)}
+                placeholder="From"
+                className={`w-full outline-none bg-transparent truncate text-[18px] ${
                   flight.from ? "font-bold tracking-tight text-slate-900" : "font-medium text-slate-400"
                 }`}
-              >
-                {flight.from || "From"}
-              </div>
+              />
             </div>
 
             {/* Swap Button (Absolute center) */}
@@ -47,30 +53,34 @@ export default function MultiCityForm() {
               <ArrowsRightLeftIcon className="h-4 w-4" />
             </div>
 
-            <div className="flex-1 rounded-2xl border border-slate-200 bg-white px-4 py-3 ml-2">
+            <div className="flex-1 flex flex-col justify-center rounded-2xl border border-slate-200 bg-white px-4 py-3 ml-2 group focus-within:border-[#44b50c] transition-colors">
               <div className="text-[13px] font-semibold text-slate-500">To</div>
-              <div
-                className={`truncate text-[18px] ${
+              <input
+                type="text"
+                value={flight.to}
+                onChange={(e) => updateFlight(flight.id, "to", e.target.value)}
+                placeholder="To"
+                className={`w-full outline-none bg-transparent truncate text-[18px] ${
                   flight.to ? "font-bold tracking-tight text-slate-900" : "font-medium text-slate-400"
                 }`}
-              >
-                {flight.to || "To"}
-              </div>
+              />
             </div>
           </div>
 
           {/* Depart */}
           <div className="flex items-center w-full lg:w-[35%] gap-2">
             <div className="flex-1 flex overflow-hidden rounded-2xl border border-slate-200 bg-white">
-              <div className="flex-1 px-4 py-3">
+              <div className="flex-1 px-4 py-3 flex flex-col justify-center group focus-within:border-[#44b50c]">
                 <div className="text-[13px] font-semibold text-slate-500">Depart</div>
-                <div
-                  className={`truncate text-[18px] ${
+                <input
+                  type="text"
+                  value={flight.date}
+                  onChange={(e) => updateFlight(flight.id, "date", e.target.value)}
+                  placeholder="Depart"
+                  className={`w-full outline-none bg-transparent truncate text-[18px] ${
                     flight.date ? "font-bold tracking-tight text-slate-900" : "font-medium text-slate-400"
                   }`}
-                >
-                  {flight.date || "Depart"}
-                </div>
+                />
               </div>
               {/* Optional chevrons if date is selected */}
               {flight.date && (
