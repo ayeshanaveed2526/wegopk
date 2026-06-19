@@ -16,10 +16,19 @@
   --color-wego-dark-green: var(--wego-dark-green);
   --color-wego-orange: var(--wego-orange);
   --color-wego-blue: var(--wego-blue);
-  --font-sans: var(--font-inter), sans-serif;
   --animate-marquee: marquee 40s linear infinite;
   --animate-marquee-reverse: marquee-reverse 40s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
   
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
   @keyframes marquee {
     0% {
       transform: translateX(0%);
